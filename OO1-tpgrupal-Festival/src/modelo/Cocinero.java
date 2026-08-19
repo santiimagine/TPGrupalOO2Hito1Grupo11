@@ -6,6 +6,8 @@ public class Cocinero extends Empleado {
 
 	private String especialidad;
 	private double plusCategoria;
+	
+	public Cocinero(){};
 
 	public Cocinero(int id,
 			String nombre,
@@ -28,6 +30,14 @@ public class Cocinero extends Empleado {
 
 	public double getPlusCategoria() {
 		return plusCategoria;
+	}
+
+	public void setEspecialidad(String especialidad) {
+		this.especialidad = especialidad;
+	}
+
+	public void setPlusCategoria(double plusCategoria) {
+		this.plusCategoria = plusCategoria;
 	}
 
 	@Override

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        <hibernate-mapping>
+    <class name="modelo.Empleado" table="empleado">
+    	<!-- ID -->
+        <id name="id" column="id">
+            <generator class="identity"/>
+        </id>
+		<!-- Atributos - Columnas -->
+		<property name="nombre" column="nombre" type="string" not-null="true"/>
+		<property name="apellido" column="apellido" type="string" not-null="true"/>
+		<property name="dni" column="dni" type="string" not-null="true" unique="true"/>
+		<property name="fechaNacimiento" column="fecha_nacimiento" type="java.time.LocalDate" not-null="true" access="field"/>
+		<property name="fechaIngreso" column="fecha_ingreso" type="java.time.LocalDate" not-null="true"/>
+		<!-- Herencia -->
+		<joined-subclass name="modelo.Cocinero" table="cocinero">
+			<key column="id_cocinero" />
+			<property name="especialidad" column="especialidad" type="string" not-null="true"/>
+			<property name="plusCategoria" column="plus_categoria" type="double" not-null="true"/>
+		</joined-subclass>
+		
+		<joined-subclass name="modelo.Cajero" table="cajero">
+			<key column="id_cajero" />
+			<property name="turno" column="turno" not-null="true">
+				<type name="org.hibernate.type.EnumType">
+					<param name="enumClass">modelo.Turno</param>
+					<param name="useNamed">true</param>
+				</type>
+			</property>
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

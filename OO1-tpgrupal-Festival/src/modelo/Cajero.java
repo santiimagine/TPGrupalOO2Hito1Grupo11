@@ -5,6 +5,8 @@ import java.time.LocalDate;
 public class Cajero extends Empleado {
 
 	private Turno turno;
+	
+	public Cajero(){};
 
 	public Cajero(int id,
 			String nombre,
@@ -21,6 +23,10 @@ public class Cajero extends Empleado {
 
 	public Turno getTurno() {
 		return turno;
+	}
+
+	public void setTurno(Turno turno) {
+		this.turno = turno;
 	}
 
 	@Override
