@@ -49,6 +49,8 @@ public class Sistema {
 	// que invoque
 	// internamente al CU #2 para validar la existencia de la Unidad y el Festival.
 	// PIDE FECHA INICIO Y FECHA FIN DE FESTIVAL
+	
+	/*
 	public Pedido agregarPedido(LocalDate fecha, String codigoUnidad, String nombreFestival, LocalDate fechaInicioFestival, LocalDate fechaFinFestival) throws Exception {
 
 		// CU2
@@ -76,7 +78,7 @@ public class Sistema {
 
 		return nuevo;
 	}
-	
+	*/
 	
 
 	public boolean eliminarFestival(int id) {
@@ -125,6 +127,7 @@ public class Sistema {
 	}
 
 	// UNIDAD
+	/*
 	public boolean agregarFoodTruck(String nombreComercial, Empleado responsable, double superficie, String codigo,
 			String patente, boolean requiereElectricidad) throws Exception {
 
@@ -142,14 +145,18 @@ public class Sistema {
 			id = lstUnidadVenta.get(lstUnidadVenta.size() - 1).getId() + 1;
 		}
 
-		FoodTruck nuevo = new FoodTruck(id, nombreComercial, responsable, superficie, codigo, patente,
+		FoodTruck nuevo = new FoodTruck(nombreComercial, responsable, superficie, codigo, patente,
 				requiereElectricidad);
 
 		agregado = lstUnidadVenta.add(nuevo);
 
 		return agregado;
 	}
+	*/
 
+	
+	
+	/*
 	public boolean agregarPuestoDesarmable(String nombreComercial, Empleado responsable, double superficie,
 			String codigo, int cantidadCarpas, int tiempoMontaje) throws Exception {
 
@@ -167,14 +174,18 @@ public class Sistema {
 			id = lstUnidadVenta.get(lstUnidadVenta.size() - 1).getId() + 1;
 		}
 
-		PuestoDesarmable nuevo = new PuestoDesarmable(id, nombreComercial, responsable, superficie, codigo,
+		PuestoDesarmable nuevo = new PuestoDesarmable(nombreComercial, responsable, superficie, codigo,
 				cantidadCarpas, tiempoMontaje);
 
 		agregado = lstUnidadVenta.add(nuevo);
 
 		return agregado;
 	}
-
+	*/
+	
+	
+	
+	
 	public boolean eliminarUnidadVenta(String codigo) throws Exception {
 		boolean eliminado = false;
 		int i = 0;

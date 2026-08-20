@@ -4,11 +4,11 @@ public class PuestoDesarmable extends UnidadVenta {
 	private int cantidadCarpas;
 	private int tiempoMontaje;
 	
-	public PuestoDesarmable(int id, String nombreComercial,
+	public PuestoDesarmable(String nombreComercial,
 							Empleado responsable, double superficie,
 							String codigo,int cantidadCarpas, 
 							int tiempoMontaje) {
-		super(id,nombreComercial,responsable,superficie,codigo);
+		super(nombreComercial,responsable,superficie,codigo);
 		this.setCantidadCarpas(cantidadCarpas);
 		this.setTiempoMontaje(tiempoMontaje);
 		

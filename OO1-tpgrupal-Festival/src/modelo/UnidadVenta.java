@@ -1,36 +1,41 @@
 package modelo;
 
 import java.util.List;
+import java.util.Set;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.time.LocalDate;
 
 public abstract class UnidadVenta {
-	private int id;
+	private int idUnidadVenta;
 	protected String nombreComercial;
 	protected Empleado responsable;
 	protected double superficie;
 	protected String codigo;
-	protected List<Empleado> personal;
-	protected List<Plato> platos;
-	protected List<Pedido> pedidos;
+	protected Set<Empleado> personal;
+	protected Set<Plato> platos;
+	protected Set<Pedido> pedidos;
 
-	public UnidadVenta(int id, String nombreComercial, Empleado responsable, double superficie, String codigo) {
-		this.setId(id);
+	
+	public UnidadVenta(){};
+	
+	public UnidadVenta(String nombreComercial, Empleado responsable, double superficie, String codigo) {
+	
 		this.setNombreComercial(nombreComercial);
 		this.setResponsable(responsable);
 		this.setSuperficie(superficie);
 		this.setCodigo(codigo);
-		this.personal = new ArrayList<>();
-		this.platos = new ArrayList<>();
-		this.pedidos = new ArrayList<>();
+		this.personal = new HashSet<>();
+		this.platos = new HashSet<>();
+		this.pedidos = new HashSet<>();
 	}
 
 	public int getId() {
-		return id;
+		return idUnidadVenta;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	protected void setId(int id) {
+		this.idUnidadVenta = id;
 	}
 
 	public String getNombreComercial() {
@@ -65,23 +70,23 @@ public abstract class UnidadVenta {
 		this.codigo = codigo;
 	}
 
-	public List<Empleado> getPersonal() {
+	public Set<Empleado> getPersonal() {
 		return personal;
 	}
 
-	public void setPersonal(List<Empleado> personal) {
+	public void setPersonal(Set<Empleado> personal) {
 		this.personal = personal;
 	}
 
-	public List<Plato> getPlatos() {
+	public Set<Plato> getPlatos() {
 		return platos;
 	}
 
-	public void setPlatos(List<Plato> platos) {
+	public void setPlatos(Set<Plato> platos) {
 		this.platos = platos;
 	}
 
-	public List<Pedido> getPedidos() {
+	public Set<Pedido> getPedidos() {
 		return this.pedidos;
 	}
 
@@ -89,6 +94,28 @@ public abstract class UnidadVenta {
 		return this.personal.add(empleado);
 	}
 
+	
+	
+	
+	@Override
+	public String toString() {
+		return "UnidadVenta [idUnidadVenta=" + idUnidadVenta + ", nombreComercial=" + nombreComercial + ", responsable="
+				+ responsable + ", superficie=" + superficie + ", codigo=" + codigo + ", personal=" + personal
+				+ ", platos=" + platos + ", pedidos=" + pedidos + "]";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//MÉTODOS UNIDAD VENTA
+	/*
 	public boolean agregarPlato(String nombre, double precioVenta, double costoProduccion) {
 		boolean agregado = false;
 
@@ -101,13 +128,17 @@ public abstract class UnidadVenta {
 				id = platos.get(platos.size() - 1).getId() + 1;
 			}
 
-			agregado = platos.add(new Plato(id, nombre, precioVenta, costoProduccion));
+			agregado = platos.add(new Plato(idUnidadVenta, nombre, precioVenta, costoProduccion));
 		}
 
 		return agregado;
 	}
 
-	/*private boolean existePlato(Plato plato) {
+	/* 
+	 
+	/*
+	 * private boolean existePlato(Plato plato) {
+	 
 		boolean existe = false;
 		int i = 0;
 
@@ -134,6 +165,7 @@ public abstract class UnidadVenta {
 		return total;
 	}
 
+	/*
 	public Plato buscarPlato(String nombre) {
 		Plato plato = null;
 
@@ -149,14 +181,9 @@ public abstract class UnidadVenta {
 
 		return plato;
 	}
+	*/
 
-	@Override
-	public String toString() {
-		return "UnidadVenta: [Nombre Comercial: " + this.getNombreComercial() + "\n  | Responsable: "
-				+ this.getResponsable().toString() + "\n  | Superficie: " + this.getSuperficie() + "\n  | Codigo: "
-				+ this.getCodigo() + "\n  | Personal: " + this.getPersonal().toString() + "\n  | Platos: "
-				+ this.getPlatos().toString();
-	}
+
 
 	public boolean equals(UnidadVenta unidad) {
 		return this.codigo.equals(unidad.getCodigo());
@@ -229,5 +256,4 @@ public abstract class UnidadVenta {
 
 		return platoEstrella;
 	}
-
 }

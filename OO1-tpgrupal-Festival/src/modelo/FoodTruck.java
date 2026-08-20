@@ -5,9 +5,9 @@ public class FoodTruck extends UnidadVenta{
 	private String patente;
 	private boolean requiereElectricidad;
 	
-	public FoodTruck(int id, String nombreComercial, Empleado responsable,
+	public FoodTruck(String nombreComercial, Empleado responsable,
 					double superficie, String codigo, String patente, boolean requiereElectricidad) {
-		super(id,nombreComercial,responsable,superficie,codigo);
+		super(nombreComercial,responsable,superficie,codigo);
 		this.setPatente(patente);
 		this.setRequiereElectricidad(requiereElectricidad);
 	}
@@ -31,6 +31,16 @@ public class FoodTruck extends UnidadVenta{
 				"| Requiere Electricidad: " + this.isRequiereElectricidad()+
 				" ]";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@Override
 	public double calcularCanon() {

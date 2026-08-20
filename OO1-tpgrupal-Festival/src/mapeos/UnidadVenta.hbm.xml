@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        <hibernate-mapping>
+    <class name="modelo.UnidadVenta" table="unidad venta">
+    	<!-- ID -->
+        <id name="idUnidadVenta" column="idunidadventa">
+            <generator class="identity"/>
+        </id>
+		<!-- Atributos - Columnas -->
+		<property name="nombreComercial" column="nombrecomercial" type="string" not-null="true"/>
+		<property name="festival" column="festival" type="Festival" not-null="true"/>
+		<property name="Empleado" column="empleado" type="responsable" not-null="true" />
+		<property name="superficie" column="superficie" type="double" not-null="true" />
+		<property name="codigo" column="codigo" type="string" not-null="true"/>
+		
+		<!--
+		
+		MAPEO DE SETS (Listas)
+
+	    <set name="personal" table="unidadempleado" cascade="all">
+	        <key column="unidad_id"/>
+	        <many-to-many class="modelo.Empleado" column="empleado_id"/>
+	    </set>
+	
+	    <set name="platos" table="unidadplato" cascade="all">
+	        <key column="unidad_id"/>
+	        <many-to-many class="modelo.Plato" column="plato_id"/>
+	    </set>
+	
+	  
+	    <set name="pedidos" table="unidadpedido" cascade="all">
+	        <key column="unidad_id"/>
+	        <one-to-many class="modelo.Pedido"/>
+	    </set>
+
+	 	-->
+	</class>
+	
+		<!-- HERENCIA -->
+	<joined-subclass name="modelo.FoodTruck" table="foodtruck">
+	    <key column="id_foodtruck" />
+	    <property name="patente" column="patente" type="string" not-null="true"/>
+	    <property name="requiereElectricidad" column="requiere_electricidad" type="boolean" not-null="true"/>
+	</joined-subclass>
+	
+	<joined-subclass name="modelo.PuestoDesarmable" table="puestodesarmable">
+	    <key column="id_puestodesarmable" />
+	    <property name="patente" column="patente" type="string" not-null="true"/>
+	    <property name="requiereElectricidad" column="requiere_electricidad" type="boolean" not-null="true"/>
+	</joined-subclass>
+
+
+	
+</hibernate-mapping>
