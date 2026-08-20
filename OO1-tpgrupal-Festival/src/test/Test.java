@@ -7,9 +7,11 @@ import modelo.*;
 
 public class Test {
 
+	/*
 	public static void main(String[] args) {
 		Sistema s = new Sistema();
 
+		
 		// ARMADO DEL SISTEMA
 		try {
 
@@ -422,5 +424,6 @@ public class Test {
 		}
 
 	}
-
+	*/
+	
 }
