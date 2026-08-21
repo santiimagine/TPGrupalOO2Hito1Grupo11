@@ -12,7 +12,7 @@ Trabajo Práctico Grupal — Objetos 2 — Hito 1
 |---|---|
 | Santiago Saitz | [@santiimagine](https://github.com/santiimagine) |
 | Francisco Robles Acuña | [@Francisco-Robles](https://github.com/Francisco-Robles) |
-| Nicolas Campuzzano | _(completar)_ |
+| Nicolas Campusano | [@NicoPro03](https://github.com/NicoPro03) |
 | Emanuel Sotelo | _(completar)_ |
 
 ## Registro de actualizaciones
