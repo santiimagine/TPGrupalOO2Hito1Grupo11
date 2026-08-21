@@ -1,28 +1,30 @@
 package modelo;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
 import java.time.LocalDate;
 
 public class Pedido {
-	private int id;
+	private int idPedido;
 	private LocalDate fecha;
 	private Festival festival;
-	private List<ItemPedido> items;
-	
-	
-	public Pedido(int id, LocalDate fecha,  Festival festival) throws Exception {
-		this.setId(id);
+	private UnidadVenta unidadVenta;
+	private Set<ItemPedido> items;
+
+	public Pedido() {}
+
+	public Pedido(LocalDate fecha,  Festival festival, UnidadVenta unidadVenta) throws Exception {
 		this.festival = festival;
+		this.unidadVenta = unidadVenta;
 		this.setFecha(fecha);
-		this.items = new ArrayList<ItemPedido>();
+		this.items = new HashSet<ItemPedido>();
 	}
-	
-	
-	public int getId() {
-		return id;
+
+
+	public int getIdPedido() {
+		return idPedido;
 	}
-	public void setId(int id) {
-		this.id = id;
+	protected void setIdPedido(int id) {
+		this.idPedido = id;
 	}
 	public LocalDate getFecha() {
 		return fecha;
@@ -36,22 +38,29 @@ public class Pedido {
 
 	    this.fecha = fecha;
 	}
-	public List<ItemPedido> getItems() {
+
+	public Set<ItemPedido> getItems() {
 		return items;
 	}
-	public void setItems(List<ItemPedido> items) {
+	public void setItems(Set<ItemPedido> items) {
 		this.items = items;
 	}
-	
+
 	public Festival getFestival() {
 	    return festival;
 	}
-	
+
+	public UnidadVenta getUnidadVenta() {
+	    return unidadVenta;
+	}
+
 	public boolean agregarItem(Plato plato, int cantidad)
 	{
-	    return items.add(new ItemPedido(cantidad, plato));
+	    ItemPedido item = new ItemPedido(cantidad, plato);
+	    item.setPedido(this);
+	    return items.add(item);
 	}
-	
+
 	public double calcularTotal()
 	{
 	    double total = 0;
@@ -65,11 +74,11 @@ public class Pedido {
 	    return total;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Pedido [ Fecha = " + this.getFecha() + ", Festival = " + 
-		this.getFestival().getNombre() + ", Items= " + this.getItems().toString() + " ]";
+		return "Pedido [idPedido=" + idPedido + ", fecha=" + fecha + ", festival=" + festival + ", unidadVenta="
+				+ unidadVenta + "]";
 	}
-	
-	
+
 }

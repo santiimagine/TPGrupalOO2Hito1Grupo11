@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="modelo.Plato" table="plato">
+    	<!-- ID -->
+        <id name="idPlato" column="idPlato">
+            <generator class="identity"/>
+        </id>
+		<!-- Atributos - Columnas -->
+		<property name="nombre" column="nombre" type="string" not-null="true"/>
+        <property name="precioVenta" column="precioVenta" type="double" not-null="true"/>
+        <property name="costoProduccion" column="costoProduccion" type="double" not-null="true"/>
+	</class>    
+</hibernate-mapping>

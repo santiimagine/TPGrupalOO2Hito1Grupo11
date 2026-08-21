@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
         <hibernate-mapping>
-    <class name="modelo.UnidadVenta" table="unidad venta">
+    <class name="modelo.UnidadVenta" table="unidad_venta">
     	<!-- ID -->
         <id name="idUnidadVenta" column="idunidadventa">
             <generator class="identity"/>
@@ -11,7 +11,7 @@
 		<!-- Atributos - Columnas -->
 		<property name="nombreComercial" column="nombrecomercial" type="string" not-null="true"/>
 		<property name="festival" column="festival" type="Festival" not-null="true"/>
-		<property name="Empleado" column="empleado" type="responsable" not-null="true" />
+		<many-to-one name="responsable" class="modelo.Empleado" column="responsable" unique="true" not-null="true"/>
 		<property name="superficie" column="superficie" type="double" not-null="true" />
 		<property name="codigo" column="codigo" type="string" not-null="true"/>
 		
@@ -47,8 +47,8 @@
 	
 	<joined-subclass name="modelo.PuestoDesarmable" table="puestodesarmable">
 	    <key column="id_puestodesarmable" />
-	    <property name="patente" column="patente" type="string" not-null="true"/>
-	    <property name="requiereElectricidad" column="requiere_electricidad" type="boolean" not-null="true"/>
+	    <property name="cantidadCarpas" column="cantidadCarpas" type="int" not-null="true"/>
+	    <property name="tiempoMontaje" column="tiempoMontaje" type="int" not-null="true"/>
 	</joined-subclass>
 
 
