@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="modelo.Pedido" table="pedido">
+    	<!-- ID -->
+        <id name="idPedido" column="idPedido">
+            <generator class="identity"/>
+        </id>
+		<!-- Atributos - Columnas -->
+        <property name="fecha" column="fecha" type="java.time.LocalDate" not-null="true" access="field"/>
+
+        <!-- Relacion 1 a N: un Pedido tiene muchos ItemPedido. inverse="true" porque
+             quien manda en la relacion es el many-to-one del lado ItemPedido -->
+        <set name="items" table="item_pedido" inverse="true" lazy="true" fetch="select">
+            <key column="idPedido" not-null="true"/>
+            <one-to-many class="modelo.ItemPedido"/>
+        </set>
+		<many-to-one name="unidadVenta" class="modelo.UnidadVenta" column="idUnidadVenta" not-null="true"/>
+        <!--
+        PENDIENTE:
+
+        <many-to-one name="festival" class="modelo.Festival" column="idFestival" not-null="true"/>
+        
+
+        -->
+	</class>
+</hibernate-mapping>

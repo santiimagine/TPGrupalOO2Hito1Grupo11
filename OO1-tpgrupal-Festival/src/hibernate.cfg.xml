@@ -16,5 +16,10 @@
 
     <!--Mapeo Entidades   -->
     <mapping resource="mapeos/Empleado.hbm.xml"/>
+    <mapping resource="mapeos/UnidadVenta.hbm.xml"/>
+    <mapping resource="mapeos/Plato.hbm.xml"/>
+    <mapping resource="mapeos/ItemPedido.hbm.xml"/>
+    <mapping resource="mapeos/Pedido.hbm.xml"/>
+
   </session-factory>
 </hibernate-configuration>

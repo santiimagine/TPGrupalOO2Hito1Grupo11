@@ -1,22 +1,28 @@
 package modelo;
 
 public class Plato {
-	private int id;
+	private int idPlato;
 	private String nombre;
 	private double precioVenta;
 	private double costoProduccion;
 
+	public Plato() {}
+
 	//CONSTRUCTOR
-	public Plato(int id, String nombre, double precioVenta, double costoProduccion) {
-		this.id = id;
+	public Plato(String nombre, double precioVenta, double costoProduccion) {
 		this.nombre = nombre;
 		this.precioVenta = precioVenta;
 		this.costoProduccion = costoProduccion;
 	}
 
-	//GETTERS Y SETTERS 
-	public int getId() {
-		return id;
+	//GETTERS Y SETTERS
+	public int getIdPlato() {
+		return idPlato;
+	}
+
+	// siempre va protected, para que no sea modificado desde afuera
+	protected void setIdPlato(int id) {
+		this.idPlato = id;
 	}
 
 	public String getNombre() {
@@ -45,7 +51,7 @@ public class Plato {
 
 	@Override
 	public String toString() {
-		return "Plato [id=" + id +
+		return "Plato [idPlato=" + idPlato +
 				", nombre=" + nombre +
 				", precioVenta=" + precioVenta + "]";
 	}
@@ -54,8 +60,5 @@ public class Plato {
 	{
 	    return this.nombre.equalsIgnoreCase(plato.getNombre());
 	}
-
-
-
 
 }
