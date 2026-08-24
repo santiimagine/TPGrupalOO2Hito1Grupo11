@@ -1,6 +1,6 @@
 package modelo;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
 import java.time.LocalDate;
 
 public class Festival {
@@ -9,8 +9,8 @@ public class Festival {
 	private String temporada;
 	private LocalDate fechaInicio;
 	private LocalDate fechaFin;
-	private List<UnidadVenta> unidades;
-	
+	private Set<UnidadVenta> unidades;
+
 	public Festival(int id, String nombre, String temporada, LocalDate fechaInicio, LocalDate fechaFin) {
 		super();
 		this.id = id;
@@ -18,7 +18,7 @@ public class Festival {
 		this.temporada = temporada;
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
-		this.unidades = new ArrayList<UnidadVenta>();
+		this.unidades = new HashSet<UnidadVenta>();
 
 	}
 	public int getId() {
@@ -51,7 +51,7 @@ public class Festival {
 	public void setFechaFin(LocalDate fechaFin) {
 		this.fechaFin = fechaFin;
 	}
-	public List<UnidadVenta> getUnidades() {
+	public Set<UnidadVenta> getUnidades() {
 		return this.unidades;
 	}
 

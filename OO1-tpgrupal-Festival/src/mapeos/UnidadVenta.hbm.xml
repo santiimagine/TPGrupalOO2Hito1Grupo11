@@ -10,8 +10,8 @@
         </id>
 		<!-- Atributos - Columnas -->
 		<property name="nombreComercial" column="nombrecomercial" type="string" not-null="true"/>
-		<property name="festival" column="festival" type="Festival" not-null="true"/>
 		<many-to-one name="responsable" class="modelo.Empleado" column="responsable" unique="true" not-null="true"/>
+		<many-to-one name="festival" class="modelo.Festival" column="idFestival" not-null="true"/>
 		<property name="superficie" column="superficie" type="double" not-null="true" />
 		<property name="codigo" column="codigo" type="string" not-null="true"/>
 		

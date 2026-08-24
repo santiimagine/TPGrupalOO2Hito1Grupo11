@@ -10,6 +10,7 @@ public abstract class UnidadVenta {
 	private int idUnidadVenta;
 	protected String nombreComercial;
 	protected Empleado responsable;
+	protected Festival festival;
 	protected double superficie;
 	protected String codigo;
 	protected Set<Empleado> personal;
@@ -52,6 +53,17 @@ public abstract class UnidadVenta {
 
 	public void setResponsable(Empleado responsable) {
 		this.responsable = responsable;
+	}
+
+	public Festival getFestival() {
+		return festival;
+	}
+
+	// NOTA: todavia no se setea desde ningun constructor (FoodTruck/PuestoDesarmable
+	// no lo reciben como parametro) - falta decidir en el ABM/negocio en que momento
+	// se asigna una UnidadVenta a un Festival. Por ahora se puede setear a mano.
+	public void setFestival(Festival festival) {
+		this.festival = festival;
 	}
 
 	public double getSuperficie() {

@@ -18,12 +18,6 @@
             <one-to-many class="modelo.ItemPedido"/>
         </set>
 		<many-to-one name="unidadVenta" class="modelo.UnidadVenta" column="idUnidadVenta" not-null="true"/>
-        <!--
-        PENDIENTE:
-
-        <many-to-one name="festival" class="modelo.Festival" column="idFestival" not-null="true"/>
-        
-
-        -->
+		<many-to-one name="festival" class="modelo.Festival" column="idFestival" not-null="true"/>
 	</class>
 </hibernate-mapping>
