@@ -74,7 +74,7 @@ public class ItemPedidoDao {
 		ItemPedido objeto = null;
 		try {
 			iniciaOperacion();
-			objeto = (ItemPedido) session.createQuery("from ItemPedido p where p.idItemPedido=:idItemPedido")
+			objeto = (ItemPedido) session.createQuery("from ItemPedido p where p.id=:idItemPedido")
 						.setParameter("idItemPedido", idItemPedido).uniqueResult();
 		} finally {
 			session.close();

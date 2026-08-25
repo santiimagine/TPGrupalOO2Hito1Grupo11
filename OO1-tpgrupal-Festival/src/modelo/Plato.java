@@ -1,7 +1,7 @@
 package modelo;
 
 public class Plato {
-	private int idPlato;
+	private int id;
 	private String nombre;
 	private double precioVenta;
 	private double costoProduccion;
@@ -16,13 +16,13 @@ public class Plato {
 	}
 
 	//GETTERS Y SETTERS
-	public int getIdPlato() {
-		return idPlato;
+	public int getId() {
+		return id;
 	}
 
 	// siempre va protected, para que no sea modificado desde afuera
-	protected void setIdPlato(int id) {
-		this.idPlato = id;
+	protected void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -51,7 +51,7 @@ public class Plato {
 
 	@Override
 	public String toString() {
-		return "Plato [idPlato=" + idPlato +
+		return "Plato [id=" + id +
 				", nombre=" + nombre +
 				", precioVenta=" + precioVenta + "]";
 	}

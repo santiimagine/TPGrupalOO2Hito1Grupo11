@@ -4,10 +4,12 @@ package modelo;
 public class FoodTruck extends UnidadVenta{
 	private String patente;
 	private boolean requiereElectricidad;
-	
-	public FoodTruck(String nombreComercial, Empleado responsable,
+
+	public FoodTruck() {}
+
+	public FoodTruck(String nombreComercial, Festival festival, Empleado responsable,
 					double superficie, String codigo, String patente, boolean requiereElectricidad) {
-		super(nombreComercial,responsable,superficie,codigo);
+		super(nombreComercial,festival,responsable,superficie,codigo);
 		this.setPatente(patente);
 		this.setRequiereElectricidad(requiereElectricidad);
 	}
@@ -31,15 +33,6 @@ public class FoodTruck extends UnidadVenta{
 				"| Requiere Electricidad: " + this.isRequiereElectricidad()+
 				" ]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	@Override

@@ -20,9 +20,10 @@ public abstract class UnidadVenta {
 	
 	public UnidadVenta(){};
 	
-	public UnidadVenta(String nombreComercial, Empleado responsable, double superficie, String codigo) {
-	
+	public UnidadVenta(String nombreComercial, Festival festival, Empleado responsable, double superficie, String codigo) {
+
 		this.setNombreComercial(nombreComercial);
+		this.setFestival(festival);
 		this.setResponsable(responsable);
 		this.setSuperficie(superficie);
 		this.setCodigo(codigo);
@@ -59,9 +60,6 @@ public abstract class UnidadVenta {
 		return festival;
 	}
 
-	// NOTA: todavia no se setea desde ningun constructor (FoodTruck/PuestoDesarmable
-	// no lo reciben como parametro) - falta decidir en el ABM/negocio en que momento
-	// se asigna una UnidadVenta a un Festival. Por ahora se puede setear a mano.
 	public void setFestival(Festival festival) {
 		this.festival = festival;
 	}

@@ -1,3 +1,4 @@
+/*
 package modelo;
 
 import java.time.LocalDate;
@@ -80,7 +81,7 @@ public class Sistema {
 	}
 	*/
 	
-
+/*
 	public boolean eliminarFestival(int id) {
 		boolean eliminado = false;
 
@@ -184,7 +185,7 @@ public class Sistema {
 	*/
 	
 	
-	
+/*
 	
 	public boolean eliminarUnidadVenta(String codigo) throws Exception {
 		boolean eliminado = false;
@@ -450,3 +451,4 @@ public class Sistema {
 		return top3;
 	}
 }
+*/

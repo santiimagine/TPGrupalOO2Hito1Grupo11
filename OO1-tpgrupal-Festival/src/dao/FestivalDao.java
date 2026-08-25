@@ -6,19 +6,19 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import modelo.Plato;
+import modelo.Festival;
 
-public class PlatoDao {
+public class FestivalDao {
 	private static Session session;
 	private Transaction tx;
 
-	private static PlatoDao instancia = null;
+	private static FestivalDao instancia = null;
 
-	protected PlatoDao() {}
+	protected FestivalDao() {}
 
-	public static PlatoDao getInstance() {
+	public static FestivalDao getInstance() {
 		if (instancia == null)
-			instancia = new PlatoDao();
+			instancia = new FestivalDao();
 		return instancia;
 	}
 
@@ -32,7 +32,7 @@ public class PlatoDao {
 		throw new HibernateException("ERROR en la capa de acceso a datos", he);
 	}
 
-	public int agregar(Plato objeto) {
+	public int agregar(Festival objeto) {
 		int id = 0;
 		try {
 			iniciaOperacion();
@@ -46,7 +46,7 @@ public class PlatoDao {
 		return id;
 	}
 
-	public void actualizar(Plato objeto) {
+	public void actualizar(Festival objeto) {
 		try {
 			iniciaOperacion();
 			session.update(objeto);
@@ -58,7 +58,7 @@ public class PlatoDao {
 		}
 	}
 
-	public void eliminar(Plato objeto) {
+	public void eliminar(Festival objeto) {
 		try {
 			iniciaOperacion();
 			session.delete(objeto);
@@ -70,23 +70,23 @@ public class PlatoDao {
 		}
 	}
 
-	public Plato traer(int idPlato) {
-		Plato objeto = null;
+	public Festival traer(int idFestival) {
+		Festival objeto = null;
 		try {
 			iniciaOperacion();
-			objeto = (Plato) session.createQuery("from Plato p where p.id=:idPlato")
-						.setParameter("idPlato", idPlato).uniqueResult();
+			objeto = (Festival) session.createQuery("from Festival f where f.id=:idFestival")
+						.setParameter("idFestival", idFestival).uniqueResult();
 		} finally {
 			session.close();
 		}
 		return objeto;
 	}
 
-	public List<Plato> traer() throws HibernateException {
-		List<Plato> lista = null;
+	public List<Festival> traer() throws HibernateException {
+		List<Festival> lista = null;
 		try {
 			iniciaOperacion();
-			lista = session.createQuery("from Plato", Plato.class).list();
+			lista = session.createQuery("from Festival", Festival.class).list();
 		} finally {
 			session.close();
 		}
