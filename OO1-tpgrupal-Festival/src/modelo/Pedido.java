@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.time.LocalDate;
 
 public class Pedido {
-	private int idPedido;
+	private int id;
 	private LocalDate fecha;
 	private Festival festival;
 	private UnidadVenta unidadVenta;
@@ -20,11 +20,11 @@ public class Pedido {
 	}
 
 
-	public int getIdPedido() {
-		return idPedido;
+	public int getId() {
+		return id;
 	}
-	protected void setIdPedido(int id) {
-		this.idPedido = id;
+	protected void setId(int id) {
+		this.id = id;
 	}
 	public LocalDate getFecha() {
 		return fecha;
@@ -77,7 +77,7 @@ public class Pedido {
 
 	@Override
 	public String toString() {
-		return "Pedido [idPedido=" + idPedido + ", fecha=" + fecha + ", festival=" + festival + ", unidadVenta="
+		return "Pedido [id=" + id + ", fecha=" + fecha + ", festival=" + festival + ", unidadVenta="
 				+ unidadVenta + "]";
 	}
 

@@ -1,7 +1,7 @@
 package modelo;
 
 public class ItemPedido {
-	private int idItemPedido;
+	private int id;
 	private int cantidad;
 	private Plato plato;
 	private Pedido pedido;
@@ -13,12 +13,12 @@ public class ItemPedido {
 		this.cantidad = cantidad;
 	}
 
-	public int getIdItemPedido() {
-		return idItemPedido;
+	public int getId() {
+		return id;
 	}
 
-	protected void setIdItemPedido(int idItemPedido) {
-		this.idItemPedido = idItemPedido;
+	protected void setId(int id) {
+		this.id = id;
 	}
 
 	public int getCantidad() {
@@ -47,7 +47,7 @@ public class ItemPedido {
 
 	@Override
 	public String toString() {
-		return "ItemPedido [idItemPedido=" + idItemPedido + ", cantidad=" + cantidad + ", plato=" + plato + "]";
+		return "ItemPedido [id=" + id + ", cantidad=" + cantidad + ", plato=" + plato + "]";
 	}
 
 

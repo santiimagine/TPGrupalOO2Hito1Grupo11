@@ -5,7 +5,7 @@
 <hibernate-mapping>
     <class name="modelo.Pedido" table="pedido">
     	<!-- ID -->
-        <id name="idPedido" column="idPedido">
+        <id name="id" column="idPedido">
             <generator class="identity"/>
         </id>
 		<!-- Atributos - Columnas -->
@@ -17,7 +17,7 @@
             <key column="idPedido" not-null="true"/>
             <one-to-many class="modelo.ItemPedido"/>
         </set>
-		<many-to-one name="unidadVenta" class="modelo.UnidadVenta" column="idUnidadVenta" not-null="true"/>
-		<many-to-one name="festival" class="modelo.Festival" column="idFestival" not-null="true"/>
+		<many-to-one name="unidadVenta" class="modelo.UnidadVenta" column="idUnidadVenta" not-null="true" access="field"/>
+		<many-to-one name="festival" class="modelo.Festival" column="idFestival" not-null="true" access="field"/>
 	</class>
 </hibernate-mapping>

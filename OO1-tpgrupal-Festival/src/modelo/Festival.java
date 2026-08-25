@@ -11,6 +11,8 @@ public class Festival {
 	private LocalDate fechaFin;
 	private Set<UnidadVenta> unidades;
 
+	public Festival() {}
+
 	public Festival(int id, String nombre, String temporada, LocalDate fechaInicio, LocalDate fechaFin) {
 		super();
 		this.id = id;
@@ -63,8 +65,6 @@ public class Festival {
 				+ ", fechaFin=" + fechaFin + " Unidades=" + unidades + "]";
 	
 	}
-
-
 	
 	public boolean equals(Festival festival)
 	{

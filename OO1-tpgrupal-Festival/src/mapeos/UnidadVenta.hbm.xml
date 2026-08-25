@@ -5,7 +5,7 @@
         <hibernate-mapping>
     <class name="modelo.UnidadVenta" table="unidad_venta">
     	<!-- ID -->
-        <id name="idUnidadVenta" column="idunidadventa">
+        <id name="id" column="idunidadventa">
             <generator class="identity"/>
         </id>
 		<!-- Atributos - Columnas -->
@@ -14,43 +14,35 @@
 		<many-to-one name="festival" class="modelo.Festival" column="idFestival" not-null="true"/>
 		<property name="superficie" column="superficie" type="double" not-null="true" />
 		<property name="codigo" column="codigo" type="string" not-null="true"/>
-		
-		<!--
-		
-		MAPEO DE SETS (Listas)
 
-	    <set name="personal" table="unidadempleado" cascade="all">
-	        <key column="unidad_id"/>
-	        <many-to-many class="modelo.Empleado" column="empleado_id"/>
+		<!-- MAPEO DE SETS (Listas) -->
+
+	    <set name="personal" table="unidadempleado">
+	        <key column="idUnidadVenta"/>
+	        <many-to-many class="modelo.Empleado" column="idEmpleado"/>
 	    </set>
-	
-	    <set name="platos" table="unidadplato" cascade="all">
-	        <key column="unidad_id"/>
-	        <many-to-many class="modelo.Plato" column="plato_id"/>
+
+	    <set name="platos" table="unidadplato">
+	        <key column="idUnidadVenta"/>
+	        <many-to-many class="modelo.Plato" column="idPlato"/>
 	    </set>
-	
-	  
-	    <set name="pedidos" table="unidadpedido" cascade="all">
-	        <key column="unidad_id"/>
+
+	    <set name="pedidos" inverse="true">
+	        <key column="idUnidadVenta" not-null="true"/>
 	        <one-to-many class="modelo.Pedido"/>
 	    </set>
 
-	 	-->
-	</class>
-	
 		<!-- HERENCIA -->
-	<joined-subclass name="modelo.FoodTruck" table="foodtruck">
-	    <key column="id_foodtruck" />
-	    <property name="patente" column="patente" type="string" not-null="true"/>
-	    <property name="requiereElectricidad" column="requiere_electricidad" type="boolean" not-null="true"/>
-	</joined-subclass>
-	
-	<joined-subclass name="modelo.PuestoDesarmable" table="puestodesarmable">
-	    <key column="id_puestodesarmable" />
-	    <property name="cantidadCarpas" column="cantidadCarpas" type="int" not-null="true"/>
-	    <property name="tiempoMontaje" column="tiempoMontaje" type="int" not-null="true"/>
-	</joined-subclass>
+		<joined-subclass name="modelo.FoodTruck" table="foodtruck">
+		    <key column="id_foodtruck" />
+		    <property name="patente" column="patente" type="string" not-null="true"/>
+		    <property name="requiereElectricidad" column="requiere_electricidad" type="boolean" not-null="true"/>
+		</joined-subclass>
 
-
-	
+		<joined-subclass name="modelo.PuestoDesarmable" table="puestodesarmable">
+		    <key column="id_puestodesarmable" />
+		    <property name="cantidadCarpas" column="cantidadCarpas" type="int" not-null="true"/>
+		    <property name="tiempoMontaje" column="tiempoMontaje" type="int" not-null="true"/>
+		</joined-subclass>
+	</class>
 </hibernate-mapping>

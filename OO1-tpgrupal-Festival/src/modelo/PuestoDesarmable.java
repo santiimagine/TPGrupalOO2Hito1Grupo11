@@ -3,12 +3,15 @@ package modelo;
 public class PuestoDesarmable extends UnidadVenta {
 	private int cantidadCarpas;
 	private int tiempoMontaje;
-	
-	public PuestoDesarmable(String nombreComercial,
+
+
+	public PuestoDesarmable() {}
+
+	public PuestoDesarmable(String nombreComercial, Festival festival,
 							Empleado responsable, double superficie,
-							String codigo,int cantidadCarpas, 
+							String codigo,int cantidadCarpas,
 							int tiempoMontaje) {
-		super(nombreComercial,responsable,superficie,codigo);
+		super(nombreComercial,festival,responsable,superficie,codigo);
 		this.setCantidadCarpas(cantidadCarpas);
 		this.setTiempoMontaje(tiempoMontaje);
 		
