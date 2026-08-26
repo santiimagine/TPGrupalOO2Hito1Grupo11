@@ -5,14 +5,14 @@
 <hibernate-mapping>
     <class name="modelo.Festival" table="festival">
     	<!-- ID -->
-        <id name="id" column="idFestival">
+        <id name="id" column="id_festival">
             <generator class="identity"/>
         </id>
 		<!-- Atributos - Columnas -->
 		<property name="nombre" column="nombre" type="string" not-null="true"/>
 		<property name="temporada" column="temporada" type="string" not-null="true"/>
-		<property name="fechaInicio" column="fechaInicio" type="java.time.LocalDate" not-null="true"/>
-		<property name="fechaFin" column="fechaFin" type="java.time.LocalDate" not-null="true"/>
+		<property name="fechaInicio" column="fecha_inicio" type="java.time.LocalDate" not-null="true"/>
+		<property name="fechaFin" column="fecha_fin" type="java.time.LocalDate" not-null="true"/>
 
 		<!-- Relacion 1 a N: un Festival tiene muchas UnidadVenta habilitadas (Set,
 		     segun el diagrama). inverse="true" porque quien manda es el many-to-one
@@ -20,7 +20,7 @@
 		     getUnidades(), sin setter (el Set se crea vacio en el constructor y
 		     Hibernate lo completa escribiendo el campo directamente). -->
 		<set name="unidades" inverse="true" access="field" lazy="true" fetch="select">
-			<key column="idFestival" not-null="true"/>
+			<key column="id_festival" not-null="true"/>
 			<one-to-many class="modelo.UnidadVenta"/>
 		</set>
 	</class>

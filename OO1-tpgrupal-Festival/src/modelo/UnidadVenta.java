@@ -99,6 +99,10 @@ public abstract class UnidadVenta {
 	public Set<Pedido> getPedidos() {
 		return this.pedidos;
 	}
+	
+	public void setPedidos(Set<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
 
 	public boolean agregarEmpleado(Empleado empleado) {
 		return this.personal.add(empleado);

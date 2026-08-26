@@ -14,6 +14,7 @@ Trabajo Práctico Grupal — Objetos 2 — Hito 1
 | Francisco Robles Acuña | [@Francisco-Robles](https://github.com/Francisco-Robles) |
 | Nicolas Campusano | [@NicoPro03](https://github.com/NicoPro03) |
 | Emanuel Sotelo | _(completar)_ |
+| Juan Cruz Cusato | _(completar)_ |
 
 ## Registro de actualizaciones
 
@@ -37,11 +38,15 @@ src/
 ├── modelo/     Clases del dominio
 ├── mapeos/     Archivos de mapeo (.hbm.xml)
 ├── dao/        Capa de acceso a datos
+├── negocio/    Capa de negocio (con filtros y lógica)
+├── sql/        Scripts sql a ejecutar
 └── hibernate.cfg.xml
 ```
 
 ## Configuración inicial
 
-1. Crear la base de datos en MySQL antes de ejecutar el proyecto.
+1. Crear la base de datos en MySQL antes de ejecutar el proyecto con el archivo create.sql.
 2. Verificar usuario y contraseña en `hibernate.cfg.xml`.
 3. Agregar al build path los JAR de `hibernate-release-5.6.5.Final/lib/required/` y el Connector/J.
+4. Ejecutar el proyecto para que se creen las tablas en la base de datos.
+5. Ejecutar el archivo inserts.sql para agregar los registros en la BD.

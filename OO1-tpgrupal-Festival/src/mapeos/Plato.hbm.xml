@@ -5,12 +5,12 @@
 <hibernate-mapping>
     <class name="modelo.Plato" table="plato">
     	<!-- ID -->
-        <id name="id" column="idPlato">
+        <id name="id" column="id_plato">
             <generator class="identity"/>
         </id>
 		<!-- Atributos - Columnas -->
 		<property name="nombre" column="nombre" type="string" not-null="true"/>
-        <property name="precioVenta" column="precioVenta" type="double" not-null="true"/>
-        <property name="costoProduccion" column="costoProduccion" type="double" not-null="true"/>
+        <property name="precioVenta" column="precio_venta" type="double" not-null="true"/>
+        <property name="costoProduccion" column="costo_produccion" type="double" not-null="true"/>
 	</class>    
 </hibernate-mapping>

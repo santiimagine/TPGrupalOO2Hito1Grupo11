@@ -5,16 +5,16 @@
 <hibernate-mapping>
     <class name="modelo.ItemPedido" table="item_pedido">
     	<!-- ID -->
-        <id name="id" column="idItemPedido">
+        <id name="id" column="id_item_pedido">
             <generator class="identity"/>
         </id>
 		<!-- Atributos - Columnas -->
         <property name="cantidad" column="cantidad" type="int" not-null="true"/>
 
         <!-- Relacion N a 1: muchos ItemPedido pueden referenciar el mismo Plato -->
-        <many-to-one name="plato" class="modelo.Plato" column="idPlato" not-null="true"/>
+        <many-to-one name="plato" class="modelo.Plato" column="id_plato" not-null="true"/>
 
         <!-- Relacion N a 1: muchos ItemPedido pertenecen al mismo Pedido -->
-        <many-to-one name="pedido" class="modelo.Pedido" column="idPedido" not-null="true"/>
+        <many-to-one name="pedido" class="modelo.Pedido" column="id_pedido" not-null="true"/>
 	</class>
 </hibernate-mapping>

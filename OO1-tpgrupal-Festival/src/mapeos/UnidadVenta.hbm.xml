@@ -5,30 +5,30 @@
         <hibernate-mapping>
     <class name="modelo.UnidadVenta" table="unidad_venta">
     	<!-- ID -->
-        <id name="id" column="idunidadventa">
+        <id name="id" column="id_unidad_venta">
             <generator class="identity"/>
         </id>
 		<!-- Atributos - Columnas -->
-		<property name="nombreComercial" column="nombrecomercial" type="string" not-null="true"/>
+		<property name="nombreComercial" column="nombre_comercial" type="string" not-null="true"/>
 		<many-to-one name="responsable" class="modelo.Empleado" column="responsable" unique="true" not-null="true"/>
-		<many-to-one name="festival" class="modelo.Festival" column="idFestival" not-null="true"/>
+		<many-to-one name="festival" class="modelo.Festival" column="id_festival" not-null="true"/>
 		<property name="superficie" column="superficie" type="double" not-null="true" />
 		<property name="codigo" column="codigo" type="string" not-null="true"/>
 
 		<!-- MAPEO DE SETS (Listas) -->
 
 	    <set name="personal" table="unidadempleado">
-	        <key column="idUnidadVenta"/>
-	        <many-to-many class="modelo.Empleado" column="idEmpleado"/>
+	        <key column="id_unidad_venta"/>
+	        <one-to-many class="modelo.Empleado"/>
 	    </set>
 
 	    <set name="platos" table="unidadplato">
-	        <key column="idUnidadVenta"/>
-	        <many-to-many class="modelo.Plato" column="idPlato"/>
+	        <key column="id_unidad_venta"/>
+	        <one-to-many class="modelo.Plato"/>
 	    </set>
 
 	    <set name="pedidos" inverse="true">
-	        <key column="idUnidadVenta" not-null="true"/>
+	        <key column="id_unidad_venta" not-null="true"/>
 	        <one-to-many class="modelo.Pedido"/>
 	    </set>
 
@@ -39,10 +39,10 @@
 		    <property name="requiereElectricidad" column="requiere_electricidad" type="boolean" not-null="true"/>
 		</joined-subclass>
 
-		<joined-subclass name="modelo.PuestoDesarmable" table="puestodesarmable">
-		    <key column="id_puestodesarmable" />
-		    <property name="cantidadCarpas" column="cantidadCarpas" type="int" not-null="true"/>
-		    <property name="tiempoMontaje" column="tiempoMontaje" type="int" not-null="true"/>
+		<joined-subclass name="modelo.PuestoDesarmable" table="puesto_desarmable">
+		    <key column="id_puesto_desarmable" />
+		    <property name="cantidadCarpas" column="cantidad_carpas" type="int" not-null="true"/>
+		    <property name="tiempoMontaje" column="tiempo_montaje" type="int" not-null="true"/>
 		</joined-subclass>
 	</class>
 </hibernate-mapping>

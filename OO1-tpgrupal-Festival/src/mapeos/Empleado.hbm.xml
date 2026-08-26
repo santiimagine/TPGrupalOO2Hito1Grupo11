@@ -5,7 +5,7 @@
         <hibernate-mapping>
     <class name="modelo.Empleado" table="empleado">
     	<!-- ID -->
-        <id name="id" column="id">
+        <id name="id" column="id_empleado">
             <generator class="identity"/>
         </id>
 		<!-- Atributos - Columnas -->

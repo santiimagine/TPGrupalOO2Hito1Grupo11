@@ -5,7 +5,7 @@
 <hibernate-mapping>
     <class name="modelo.Pedido" table="pedido">
     	<!-- ID -->
-        <id name="id" column="idPedido">
+        <id name="id" column="id_pedido">
             <generator class="identity"/>
         </id>
 		<!-- Atributos - Columnas -->
@@ -14,10 +14,10 @@
         <!-- Relacion 1 a N: un Pedido tiene muchos ItemPedido. inverse="true" porque
              quien manda en la relacion es el many-to-one del lado ItemPedido -->
         <set name="items" table="item_pedido" inverse="true" lazy="true" fetch="select">
-            <key column="idPedido" not-null="true"/>
+            <key column="id_pedido" not-null="true"/>
             <one-to-many class="modelo.ItemPedido"/>
         </set>
-		<many-to-one name="unidadVenta" class="modelo.UnidadVenta" column="idUnidadVenta" not-null="true" access="field"/>
-		<many-to-one name="festival" class="modelo.Festival" column="idFestival" not-null="true" access="field"/>
+		<many-to-one name="unidadVenta" class="modelo.UnidadVenta" column="id_unidad_venta" not-null="true" access="field"/>
+		<many-to-one name="festival" class="modelo.Festival" column="id_festival" not-null="true" access="field"/>
 	</class>
 </hibernate-mapping>
