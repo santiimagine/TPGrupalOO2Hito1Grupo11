@@ -17,12 +17,12 @@
 
 		<!-- MAPEO DE SETS (Listas) -->
 
-	    <set name="personal" table="unidadempleado">
+	    <set name="personal">
 	        <key column="id_unidad_venta"/>
 	        <one-to-many class="modelo.Empleado"/>
 	    </set>
 
-	    <set name="platos" table="unidadplato">
+	    <set name="platos">
 	        <key column="id_unidad_venta"/>
 	        <one-to-many class="modelo.Plato"/>
 	    </set>
