@@ -57,6 +57,9 @@ public class Festival {
 		return this.unidades;
 	}
 
+	public void setUnidades(Set<UnidadVenta> unidades) {
+		this.unidades = unidades;
+	}
 
 	@Override
 	public String toString() {

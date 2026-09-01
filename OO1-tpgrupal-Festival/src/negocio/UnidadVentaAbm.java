@@ -25,4 +25,8 @@ public class UnidadVentaAbm {
 		return UnidadVentaDao.getInstance().traer();
 	}
 
+	public UnidadVenta traerConPlatos(int idUnidadVenta) {
+		return UnidadVentaDao.getInstance().traerConPlatos(idUnidadVenta);
+	}
+
 }
