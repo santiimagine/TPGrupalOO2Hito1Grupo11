@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -91,6 +92,20 @@ public class FestivalDao {
 			session.close();
 		}
 		return lista;
+	}
+	
+	
+	public Festival traerUnidadesVenta(int idFestival) throws HibernateException {
+		Festival objeto = null;
+	    try {
+	        iniciaOperacion();
+	        String hql = "from Festival f where f.id=:idFestival";
+	        objeto = (Festival) session.createQuery(hql).setParameter("idFestival", idFestival).uniqueResult();
+	        Hibernate.initialize(objeto.getUnidades());
+	    } finally {
+	        session.close();
+	    }
+	    return objeto;
 	}
 
 }

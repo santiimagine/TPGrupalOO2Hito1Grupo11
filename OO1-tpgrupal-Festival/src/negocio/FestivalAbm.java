@@ -4,7 +4,9 @@ import java.time.LocalDate;
 import java.util.List;
 
 import dao.FestivalDao;
+import dao.UnidadVentaDao;
 import modelo.Festival;
+import modelo.UnidadVenta;
 
 public class FestivalAbm {
 
@@ -44,6 +46,10 @@ public class FestivalAbm {
 	public void eliminar(Festival f) {
 		// Pendiente implementar lógica de negocio
 		FestivalDao.getInstance().eliminar(f);
+	}
+	
+	public Festival traerUnidadesVenta(int idFestival) {
+		return FestivalDao.getInstance().traerUnidadesVenta(idFestival);
 	}
 
 }
