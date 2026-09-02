@@ -28,6 +28,8 @@ Cada actualización del repositorio debe registrarse en la siguiente tabla, indi
 | 1-9-2026 | Empleado:Cocinero (búsqueda por PlusCategoria) | Santiago Saitz | 
 | 1-9-2026 | Cantidad total vendida de un Plato | Emanuel Sotelo |
 | 1-9-2026 | Pedidos realizados en un Festival (con sus items) | Emanuel Sotelo |
+| 1-9-2026 | Traer personal completo de una Unidad de venta específica | Francisco Robles |
+| 1-9-2026 | Traer el plato más pedido de un Festival en específico | Francisco Robles |
 
 ## Tecnologías
 
