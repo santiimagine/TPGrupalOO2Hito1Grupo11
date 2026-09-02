@@ -6,6 +6,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import modelo.Cocinero;
 import modelo.Empleado;
 
 public class EmpleadoDao {
@@ -69,4 +70,39 @@ public class EmpleadoDao {
 		return lista;
 	}
 
+	
+	
+	public List<Cocinero> traerCocineroPorEspecialidad(String especialidad) {
+	    List<Cocinero> lista = null;
+	    Session session = null;
+	    try {
+	        session = HibernateUtil.getSessionFactory().openSession();
+	        lista = session.createQuery(
+	            "from Cocinero c where c.especialidad = :esp", Cocinero.class)
+	            .setParameter("esp", especialidad)
+	            .list();
+	    } finally {
+	        if (session != null) session.close();
+	    }
+	    return lista;
+	}
+	
+
+	public List<Cocinero> traerCocineroPorPlus(double minimoPlus) {
+	    List<Cocinero> lista = null;
+	    Session session = null;
+	    try {
+	        session = HibernateUtil.getSessionFactory().openSession();
+	        lista = session.createQuery(
+	            "from Cocinero c where c.plusCategoria > :plus", Cocinero.class) // Devuelve la lista que tengan mayor al minimoPlus
+	            .setParameter("plus", minimoPlus)
+	            .list();
+	    } finally {
+	        if (session != null) session.close();
+	    }
+	    return lista;
+	}
+
+	
+	
 }
