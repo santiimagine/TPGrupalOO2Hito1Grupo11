@@ -2,7 +2,6 @@ package negocio;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import dao.UnidadVentaDao;
 import modelo.Empleado;
 import modelo.UnidadVenta;
@@ -44,4 +43,11 @@ public class UnidadVentaAbm {
 		return listaEmpleados;
 	}
 
+	
+
+	
+	
+	
+	
+	
 }

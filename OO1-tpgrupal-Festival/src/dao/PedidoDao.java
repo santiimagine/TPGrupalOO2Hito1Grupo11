@@ -2,6 +2,7 @@ package dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.Hibernate;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -9,6 +10,7 @@ import org.hibernate.Transaction;
 
 import modelo.Pedido;
 import modelo.Plato;
+import modelo.ItemPedido;
 
 public class PedidoDao {
 	private static Session session;
@@ -95,6 +97,23 @@ public class PedidoDao {
 		return lista;
 	}
 	
-		
+	public List<Pedido> traerPedidosDeFestival(int idFestival) throws HibernateException {
+	    List<Pedido> lista = null;
+	    try {
+	        iniciaOperacion();
+	        String hql = "from Pedido p where p.festival.id=:idFestival";
+	        lista = session.createQuery(hql, Pedido.class).setParameter("idFestival", idFestival).list();
+	        for (Pedido p : lista) {
+	            Hibernate.initialize(p.getItems());
+	            Hibernate.initialize(p.getUnidadVenta());
+	            for (ItemPedido item : p.getItems()) {
+	                Hibernate.initialize(item.getPlato());
+	            }
+	        }
+	    } finally {
+	        session.close();
+	    }
+	    return lista;
+	}
 
 }

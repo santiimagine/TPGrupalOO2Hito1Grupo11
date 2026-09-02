@@ -3,6 +3,7 @@ package negocio;
 import java.util.List;
 
 import dao.EmpleadoDao;
+import modelo.Cocinero;
 import modelo.Empleado;
 
 public class EmpleadoAbm {
@@ -25,4 +26,14 @@ public class EmpleadoAbm {
 		return EmpleadoDao.getInstance().traer();
 	}
 
+	public List<Cocinero> traerCocineroPorEspecialidad(String especialidad) {
+	    return EmpleadoDao.getInstance().traerCocineroPorEspecialidad(especialidad);
+	}
+
+
+	public List<Cocinero> traerCocineroPorPlus() {
+	    return EmpleadoDao.getInstance().traerCocineroPorPlus(15000);
+
+	}
+	
 }
