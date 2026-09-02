@@ -6,6 +6,7 @@ import java.util.List;
 import dao.PedidoDao;
 import modelo.Festival;
 import modelo.Pedido;
+import modelo.Plato;
 import modelo.UnidadVenta;
 
 public class PedidoAbm {
@@ -43,5 +44,5 @@ public class PedidoAbm {
 		// Pendiente implementar lógica de negocio
 		PedidoDao.getInstance().eliminar(p);
 	}
-
+	
 }

@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import modelo.ItemPedido;
+import modelo.Plato;
 
 public class ItemPedidoDao {
 	private static Session session;
@@ -91,6 +92,28 @@ public class ItemPedidoDao {
 			session.close();
 		}
 		return lista;
+	}
+	
+	public Object[] traerPlatoMasPedido (int idFestival) throws HibernateException {
+		Object[] resultado = null;
+		
+		try {
+			iniciaOperacion();
+			resultado = (Object[]) session.createQuery(
+					"select ip.plato, sum(ip.cantidad) from ItemPedido ip" +
+					" where ip.pedido.festival.id = :idFestival" +
+					" group by ip.plato" +
+					" order by sum(ip.cantidad) desc"
+					).setParameter("idFestival", idFestival)
+					.setMaxResults(1)
+					.uniqueResult();
+			
+		} finally {
+			session.close();
+		}
+		
+		return resultado;
+		
 	}
 
 }

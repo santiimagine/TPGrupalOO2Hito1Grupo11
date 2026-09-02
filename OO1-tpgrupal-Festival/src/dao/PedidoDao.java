@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -7,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import modelo.Pedido;
+import modelo.Plato;
 
 public class PedidoDao {
 	private static Session session;
@@ -92,5 +94,7 @@ public class PedidoDao {
 		}
 		return lista;
 	}
+	
+		
 
 }

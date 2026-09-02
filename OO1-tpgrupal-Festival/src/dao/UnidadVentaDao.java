@@ -5,9 +5,10 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.annotations.Where;
 import org.hibernate.Hibernate;
 
-
+import modelo.Empleado;
 import modelo.UnidadVenta;
 
 public class UnidadVentaDao {
@@ -82,6 +83,36 @@ public class UnidadVentaDao {
 	        session.close();
 	    }
 	    return objeto;
+	}
+	
+	public List<Empleado> traerPersonal (int idUnidadVenta) throws HibernateException {
+		List<Empleado> listaEmpleados = null;
+		try {
+			iniciaOperacion();
+			listaEmpleados = session.createQuery("select e from UnidadVenta uv join uv.personal e" + 
+					" where uv.id = :idUnidadVenta", 
+					Empleado.class)
+					.setParameter("idUnidadVenta", idUnidadVenta)
+					.list();
+		} finally {
+			session.close();
+		}
+		return listaEmpleados;
+	}
+	
+	public Empleado traerResponsable (int idUnidadVenta) throws HibernateException{
+		Empleado responsable = null;
+		try {
+			iniciaOperacion();
+			responsable = session.createQuery("select uv.responsable from UnidadVenta uv" +
+			" where uv.id = :idUnidadVenta",
+			Empleado.class)
+					.setParameter("idUnidadVenta", idUnidadVenta)
+					.uniqueResult();
+		} finally {
+			session.close();
+		}
+		return responsable;
 	}
 
 }
