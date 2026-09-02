@@ -1,7 +1,6 @@
 package negocio;
 
 import java.util.List;
-
 import dao.UnidadVentaDao;
 import modelo.UnidadVenta;
 
@@ -29,4 +28,11 @@ public class UnidadVentaAbm {
 		return UnidadVentaDao.getInstance().traerConPlatos(idUnidadVenta);
 	}
 
+	
+
+	
+	
+	
+	
+	
 }
