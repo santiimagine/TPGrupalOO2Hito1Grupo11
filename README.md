@@ -14,7 +14,7 @@ Trabajo Práctico Grupal — Objetos 2 — Hito 1
 | Francisco Robles Acuña | [@Francisco-Robles](https://github.com/Francisco-Robles) |
 | Nicolas Campusano | [@NicoPro03](https://github.com/NicoPro03) |
 | Emanuel Sotelo | [@EmaNicoSotelo](https://github.com/EmaNicoSotelo) |
-| Juan Cruz Cusato | _(completar)_ |
+| Juan Cruz Cusato | [@JuanchiCusato](https://github.com/JuanchiCusato) |
 
 ## Registro de actualizaciones
 
