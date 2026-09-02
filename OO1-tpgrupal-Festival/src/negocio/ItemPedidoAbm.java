@@ -42,6 +42,10 @@ public class ItemPedidoAbm {
 		ItemPedidoDao.getInstance().eliminar(item);
 	}
 	
+	public Object[] traerPlatoMasPedido (int idFestival) {
+		return ItemPedidoDao.getInstance().traerPlatoMasPedido(idFestival);
+	}
+	
 	public Long cantidadVendidaDePlato(String nombrePlato) {
 	    return ItemPedidoDao.getInstance().cantidadVendidaDePlato(nombrePlato);
 	}

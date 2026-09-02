@@ -1,7 +1,9 @@
 package negocio;
 
+import java.util.ArrayList;
 import java.util.List;
 import dao.UnidadVentaDao;
+import modelo.Empleado;
 import modelo.UnidadVenta;
 
 public class UnidadVentaAbm {
@@ -26,6 +28,19 @@ public class UnidadVentaAbm {
 
 	public UnidadVenta traerConPlatos(int idUnidadVenta) {
 		return UnidadVentaDao.getInstance().traerConPlatos(idUnidadVenta);
+	}
+	
+	public List<Empleado> traerPersonalCompleto(int idUnidadVenta){
+		UnidadVentaDao dao = UnidadVentaDao.getInstance();
+		List<Empleado> listaEmpleados = new ArrayList<>();
+		
+		Empleado responsable = dao.traerResponsable(idUnidadVenta);
+		if (responsable != null) {
+			listaEmpleados.add(responsable);
+		}
+		listaEmpleados.addAll(dao.traerPersonal(idUnidadVenta));
+		
+		return listaEmpleados;
 	}
 
 	

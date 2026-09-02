@@ -6,6 +6,7 @@ import java.util.List;
 import dao.PedidoDao;
 import modelo.Festival;
 import modelo.Pedido;
+import modelo.Plato;
 import modelo.UnidadVenta;
 
 public class PedidoAbm {
@@ -44,8 +45,9 @@ public class PedidoAbm {
 		PedidoDao.getInstance().eliminar(p);
 	}
 	
+
 	public List<Pedido> traerPedidosDeFestival(int idFestival) {
 	    return PedidoDao.getInstance().traerPedidosDeFestival(idFestival);
 	}
-
+	
 }
