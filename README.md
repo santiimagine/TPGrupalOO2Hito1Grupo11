@@ -13,7 +13,7 @@ Trabajo Práctico Grupal — Objetos 2 — Hito 1
 | Santiago Saitz | [@santiimagine](https://github.com/santiimagine) |
 | Francisco Robles Acuña | [@Francisco-Robles](https://github.com/Francisco-Robles) |
 | Nicolas Campusano | [@NicoPro03](https://github.com/NicoPro03) |
-| Emanuel Sotelo | _(completar)_ |
+| Emanuel Sotelo | [@EmaNicoSotelo](https://github.com/EmaNicoSotelo) |
 | Juan Cruz Cusato | _(completar)_ |
 
 ## Registro de actualizaciones
@@ -26,6 +26,8 @@ Cada actualización del repositorio debe registrarse en la siguiente tabla, indi
 | 1-9-2026 | Unidad de venta con su menu de platos | Nicolas Campusano |
 | 1-9-2026 | Empleado:Cocinero (búsqueda por Especialidad) | Santiago Saitz | 
 | 1-9-2026 | Empleado:Cocinero (búsqueda por PlusCategoria) | Santiago Saitz | 
+| 1-9-2026 | Cantidad total vendida de un Plato | Emanuel Sotelo |
+| 1-9-2026 | Pedidos realizados en un Festival (con sus items) | Emanuel Sotelo |
 
 ## Tecnologías
 

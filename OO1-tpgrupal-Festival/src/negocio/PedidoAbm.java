@@ -43,5 +43,9 @@ public class PedidoAbm {
 		// Pendiente implementar lógica de negocio
 		PedidoDao.getInstance().eliminar(p);
 	}
+	
+	public List<Pedido> traerPedidosDeFestival(int idFestival) {
+	    return PedidoDao.getInstance().traerPedidosDeFestival(idFestival);
+	}
 
 }

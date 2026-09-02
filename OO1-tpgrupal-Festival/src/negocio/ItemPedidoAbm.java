@@ -41,5 +41,9 @@ public class ItemPedidoAbm {
 		// Pendiente implementar lógica de negocio
 		ItemPedidoDao.getInstance().eliminar(item);
 	}
+	
+	public Long cantidadVendidaDePlato(String nombrePlato) {
+	    return ItemPedidoDao.getInstance().cantidadVendidaDePlato(nombrePlato);
+	}
 
 }

@@ -92,5 +92,17 @@ public class ItemPedidoDao {
 		}
 		return lista;
 	}
+	
+	public Long cantidadVendidaDePlato(String nombrePlato) throws HibernateException {
+	    Long total = null;
+	    try {
+	        iniciaOperacion();
+	        String hql = "select sum(i.cantidad) from ItemPedido i where i.plato.nombre=:nombrePlato";
+	        total = (Long) session.createQuery(hql).setParameter("nombrePlato", nombrePlato).uniqueResult();
+	    } finally {
+	        session.close();
+	    }
+	    return total;
+	}
 
 }
