@@ -24,6 +24,8 @@ Cada actualización del repositorio debe registrarse en la siguiente tabla, indi
 |---|---|---|
 | 1-9-2026 | Festival con sus Unidades de venta Habilitadas | Nicolas Campusano |
 | 1-9-2026 | Unidad de venta con su menu de platos | Nicolas Campusano |
+| 1-9-2026 | Empleado:Cocinero (búsqueda por Especialidad) | Santiago Saitz | 
+| 1-9-2026 | Empleado:Cocinero (búsqueda por PlusCategoria) | Santiago Saitz | 
 
 ## Tecnologías
 
